@@ -1,0 +1,38 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Repo-specific backups ----
+*_old/
+*_prev/
+
+# ---- Large per-vehicle logs (never committed) ----
+metrics/*/network_data/
+**/network_data/
+
+# ---- Archives ----
+*.zip
+*.tar.gz
+*.tar

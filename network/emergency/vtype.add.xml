@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <vType id="emergency" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="25.0" color="1,0,0" emergencyClass="1"/>
+</additional>

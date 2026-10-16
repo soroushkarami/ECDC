@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <!-- West approach (to Intersection 1) -->
+    <edge id="arm_W_in"  from="0" to="1" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_W_out" from="1" to="0" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Intersection 1 – North arm -->
+    <edge id="arm_N1_out" from="1" to="3" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_N1_in"  from="3" to="1" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Intersection 1 – South arm -->
+    <edge id="arm_S1_out" from="1" to="4" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_S1_in"  from="4" to="1" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Connection between intersections (eastbound / westbound) -->
+    <edge id="conn_EB" from="1" to="2" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="conn_WB" from="2" to="1" priority="2" numLanes="2" speed="13.89"/>
+
+    <!-- Intersection 2 – North arm -->
+    <edge id="arm_N2_out" from="2" to="5" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_N2_in"  from="5" to="2" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Intersection 2 – South arm -->
+    <edge id="arm_S2_out" from="2" to="6" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_S2_in"  from="6" to="2" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- Intersection 2 – East arm (to hospital) -->
+    <edge id="arm_E2_out" from="2" to="7" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_E2_in"  from="7" to="2" priority="2" numLanes="2" speed="11.11"/>
+</edges>

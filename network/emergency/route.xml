@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Highway straight (eastbound) -->
+    <route id="route_HW_E" edges="highway_EB arm_E_out"/>
+    <!-- Highway straight (westbound) -->
+    <route id="route_HW_W" edges="arm_E_in highway_WB"/>
+
+    <!-- Highway to North -->
+    <route id="route_HW_to_N" edges="highway_EB arm_N_out"/>
+    <!-- Highway to South -->
+    <route id="route_HW_to_S" edges="highway_EB arm_S_out"/>
+
+    <!-- City turning movements -->
+    <route id="route_N_to_E" edges="arm_N_in arm_E_out"/>
+    <route id="route_N_to_W" edges="arm_N_in highway_WB"/>
+    <route id="route_S_to_E" edges="arm_S_in arm_E_out"/>
+    <route id="route_S_to_W" edges="arm_S_in highway_WB"/>
+    <route id="route_E_to_N" edges="arm_E_in arm_N_out"/>
+    <route id="route_E_to_S" edges="arm_E_in arm_S_out"/>
+
+    <!-- Ambulance: Highway → Intersection → East (Hospital) -->
+    <route id="route_Ambulance" edges="highway_EB arm_E_out"/>
+
+    <!-- Ambulance vehicle -->
+    <vehicle id="ambulance" type="emergency" route="route_Ambulance" depart="10.00" departSpeed="20.0" departLane="0">
+        <param key="emergency" value="true"/>
+        <param key="priority" value="high"/>
+    </vehicle>
+
+</routes>

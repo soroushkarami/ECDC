@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+
+    <!-- Highway RSUs (4) -->
+    <poi id="rsu_0" x="200.0"  y="12.0" color="red" width="5.0" height="5.0" type="RSU">
+        <param key="coverage_radius" value="250"/>
+    </poi>
+    <poi id="rsu_1" x="600.0"  y="12.0" color="red" width="5.0" height="5.0" type="RSU">
+        <param key="coverage_radius" value="250"/>
+    </poi>
+
+    <!-- Intersection RSU -->
+    <poi id="rsu_4" x="1000.0" y="12.0" color="red" width="5.0" height="5.0" type="RSU">
+        <param key="coverage_radius" value="300"/>
+    </poi>
+
+    <!-- Base Stations -->
+    <poi id="baseStation2" type="base_station" x="900.0"  y="100.0" color="blue" width="4.0" height="4.0"/>
+
+    <!-- Hospital (East arm end) -->
+    <poi id="hospital" type="hospital" x="1250.0" y="-12.0" color="green" width="8.0" height="8.0">
+        <param key="description" value="City Hospital – Ambulance Destination"/>
+    </poi>
+
+</additional>

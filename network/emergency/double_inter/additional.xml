@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <!-- RSU at Intersection 1 -->
+    <poi id="rsu_0" x="250.0" y="250.0" color="red" width="5.0" height="5.0" type="RSU">
+        <param key="coverage_radius" value="250"/>
+    </poi>
+
+    <!-- RSU at Intersection 2 -->
+    <poi id="rsu_1" x="750.0" y="250.0" color="red" width="5.0" height="5.0" type="RSU">
+        <param key="coverage_radius" value="250"/>
+    </poi>
+
+    <!-- Base Stations -->
+    <poi id="baseStation" type="base_station" x="500.0"  y="350.0" color="blue" width="4.0" height="4.0"/>
+
+    <!-- Hospital -->
+    <poi id="hospital" type="hospital" x="1000.0" y="-12.0" color="green" width="8.0" height="8.0">
+        <param key="description" value="City Hospital – Ambulance Destination"/>
+    </poi>
+</additional>

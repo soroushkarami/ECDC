@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <!-- West end -->
+    <node id="0" x="0.0" y="0.0" type="priority"/>
+
+    <!-- Intersection 1 -->
+    <node id="1" x="250.0" y="0.0" type="traffic_light"/>
+
+    <!-- Intersection 2 -->
+    <node id="2" x="750.0" y="0.0" type="traffic_light"/>
+
+    <!-- North arm end of Intersection 1 -->
+    <node id="3" x="250.0" y="250.0" type="priority"/>
+
+    <!-- South arm end of Intersection 1 -->
+    <node id="4" x="250.0" y="-250.0" type="priority"/>
+
+    <!-- North arm end of Intersection 2 -->
+    <node id="5" x="750.0" y="250.0" type="priority"/>
+
+    <!-- South arm end of Intersection 2 -->
+    <node id="6" x="750.0" y="-250.0" type="priority"/>
+
+    <!-- Hospital (east arm end of Intersection 2) -->
+    <node id="7" x="1000.0" y="0.0" type="priority"/>
+</nodes>

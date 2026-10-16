@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <!-- Highway: 0 → 1000, directly to intersection -->
+    <edge id="highway_EB" from="0" to="1" priority="2" numLanes="2" speed="13.89"/>
+    <edge id="highway_WB" from="1" to="0" priority="2" numLanes="2" speed="13.89"/>
+
+    <!-- East arm -->
+    <edge id="arm_E_out" from="1" to="2" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_E_in"  from="2" to="1" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- North arm -->
+    <edge id="arm_N_out" from="1" to="3" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_N_in"  from="3" to="1" priority="2" numLanes="2" speed="11.11"/>
+
+    <!-- South arm -->
+    <edge id="arm_S_out" from="1" to="4" priority="2" numLanes="2" speed="11.11"/>
+    <edge id="arm_S_in"  from="4" to="1" priority="2" numLanes="2" speed="11.11"/>
+</edges>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <!-- Highway start -->
+    <node id="0" x="0.0" y="0.0" type="priority"/>
+
+    <!-- Intersection centre -->
+    <node id="1" x="1000.0" y="0.0" type="traffic_light"/>
+
+    <!-- East arm end -->
+    <node id="2" x="1250.0" y="0.0" type="priority"/>
+
+    <!-- North arm end -->
+    <node id="3" x="1000.0" y="250.0" type="priority"/>
+
+    <!-- South arm end -->
+    <node id="4" x="1000.0" y="-250.0" type="priority"/>
+</nodes>

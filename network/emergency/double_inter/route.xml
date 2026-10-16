@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Ambulance: West end → Intersection 1 → Connector → Intersection 2 → Hospital -->
+    <route id="route_Ambulance" edges="arm_W_in conn_EB arm_E2_out"/>
+
+    <!-- Background traffic routes (include all possible turning movements) -->
+    <route id="route_W_to_E"  edges="arm_W_in conn_EB arm_E2_out"/>
+    <route id="route_E_to_W"  edges="arm_E2_in conn_WB arm_W_out"/>
+    <route id="route_W_to_N1" edges="arm_W_in arm_N1_out"/>
+    <route id="route_W_to_S1" edges="arm_W_in arm_S1_out"/>
+    <route id="route_N1_to_E" edges="arm_N1_in conn_EB arm_E2_out"/>
+    <route id="route_N1_to_W" edges="arm_N1_in conn_WB arm_W_out"/>
+    <route id="route_N1_to_W" edges="arm_N1_in arm_W_out"/>
+    <route id="route_S1_to_W" edges="arm_S1_in arm_W_out"/>
+
+    <route id="route_N2_to_E" edges="arm_N2_in arm_E2_out"/>
+    <route id="route_N2_to_W" edges="arm_N2_in conn_WB arm_W_out"/>
+    <route id="route_S2_to_E" edges="arm_S2_in arm_E2_out"/>
+    <route id="route_S2_to_W" edges="arm_S2_in conn_WB arm_W_out"/>
+    <route id="route_E2_to_N" edges="arm_E2_in arm_N2_out"/>
+    <route id="route_E2_to_S" edges="arm_E2_in arm_S2_out"/>
+</routes>

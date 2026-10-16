@@ -1,0 +1,11 @@
+# ECDC-VANET — Python dependencies
+# Tested with Python 3.13 on AMD A10-9600P APU (see paper Section IV-A).
+#
+# NOTE: SUMO is NOT a pip package. Install it separately from
+# https://sumo.dlr.de/docs/Installing/index.html and set the SUMO_HOME
+# environment variable. All simulation scripts import `traci` from
+# $SUMO_HOME/tools.
+
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
