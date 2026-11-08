@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<additional>
-    <vType id="emergency" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="25.0" color="1,0,0" emergencyClass="1"/>
-</additional>
+version https://git-lfs.github.com/spec/v1
+oid sha256:ef1a30e14d0a18d20505c9a2efced972b74dc76b77ef7e8c50ca6df425eb7731
+size 207

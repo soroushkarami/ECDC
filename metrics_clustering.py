@@ -21,7 +21,7 @@ def lifetime(all_lifetimes: dict[str, list[int]], cluster_birth: dict, died_clus
     for cl in died_clusters:
         if cl in cluster_birth:
             # the cluster is dead so compute its lifetime
-            cl_lifetime = curr_step - cluster_birth.pop(cl)  # pop() to remove the birth time.
+            cl_lifetime = curr_step - cluster_birth.pop(cl)
             if cl not in all_lifetimes:
                 all_lifetimes[cl] = []
             all_lifetimes[cl].append(cl_lifetime)
@@ -82,7 +82,7 @@ def baseline_style_metrics(prev_members: dict, curr_members: dict,
                            birth_time: dict, lifetimes: list,
                            curr_step: float) -> tuple[dict, list, int]:
     """
-    Update cluster lifetimes and count membership changes exactly as in baseline.
+    Update cluster lifetimes and count membership changes
     Returns (birth_time, lifetimes, cluster_changes_this_step)
     """
     cluster_changes = 0
@@ -111,8 +111,6 @@ def baseline_style_metrics(prev_members: dict, curr_members: dict,
 
     return birth_time, lifetimes, cluster_changes
 
-
-# --------------------- Additional metrics for hypothesis testing ---------------------
 
 def track_cluster_births(curr_zone_members: dict, prev_zone_members: dict,
                          birth_counter: dict, time_step: float) -> dict:
@@ -171,6 +169,4 @@ def compute_ch_tenure_histogram(ch_start_time: dict, ch_end_time: dict,
         if veh in ch_start_time:
             start = ch_start_time[veh]
             tenures.append(end - start)
-    # Optionally, for CHs still active at current_time, add a final tenure at simulation end
-    # We'll let the simulation loop handle that at the end.
     return tenures
