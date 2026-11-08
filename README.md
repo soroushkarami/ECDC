@@ -16,7 +16,7 @@ This repository contains everything needed to reproduce the numerical results re
 - **Algorithm implementations**: ECDC, MCSC, IMICLiVAN, Zone-based, and the `naive_ea` stacked comparator.
 - **Communication models**: PHY/MAC (`net_metrics.py`, `net_metrics_bs_hardcoded.py`).
 - **Network XML files**: SUMO networks under `network/emergency/`.
-- **Raw and aggregate data**: Per-seed aggregates, per-step counters, and per-packet emergency delay logs for all algorithms, densities, and ablation variants under `metrics/<algorithm>_<scenario>/clustering_data/`.
+- **Raw and aggregate data**: Per-seed aggregates, per-step counters, and per-packet emergency-delay logs for all algorithms, densities, and ablation variants under `metrics/<algorithm>_<scenario>/clustering_data/`.
 - **Analysis scripts**: The exact scripts that produce every numerical table in the paper.
 
 ### What is not included
@@ -29,63 +29,59 @@ This repository contains everything needed to reproduce the numerical results re
 ## Repository layout
 
 All harnesses and analysis scripts are in the repository root (flat imports).
-ECDC/
-├── ecdc_clustering.py ECDC algorithm core
-├── ecdc_emergency.py ECDC harness (mixed topology)
-├── ecdc_doubleinter.py ECDC harness (double-intersection)
-├── ecdc_emergency_bs_hardcoded.py ECDC realistic-channel variant
-├── ecdc_doubleinter_bs_hardcoded.py
-├── MCSC_clustering.py MCSC baseline core
-├── mcsc_emergency.py MCSC harnesses
-├── mcsc_doubleinter.py
-├── imic_emergency.py IMICLiVAN harnesses
-├── imic_doubleinter.py
-├── zone_based_clustering_intersection.py
-├── zone_emergency.py Zone-based harnesses
-├── zone_doubleinter.py
-├── naive_ea_clustering.py Stacked comparator core
-├── naive_ea_emergency.py
-├── naive_ea_doubleinter.py
-├── net_metrics.py PHY/MAC model
-├── net_metrics_bs_hardcoded.py
-├── metrics_clustering.py Shared metric helpers
-├── metrics_tracking.py Event trackers
-├── statistical_analysis.py Table 17 — Paired comparisons
-├── sfr_decomposition.py Table 10 — SFR breakdown
-├── lcd_reconciliation.py Table 12 — LCD reconciliation
-├── impairment_sensitivity.py Table 5 — PHY success
-├── verify_mac_solver.py Table 6 — Bianchi solver validation
-├── mac_layer_check.py
-├── max_latency.py Table 10 — Latency bounds
-├── compute_p95.py
-├── compute_r210.py R2.10 statistics
-├── active_population.py Table 3 — Active vehicles
-├── amb_speed.py Table 3 — Speed statistics
-├── run_batch.sh Main simulation batch
-├── run_nojaccard.sh Jaccard ablation
-├── network/emergency/ SUMO networks
-├── metrics/ Per-seed and per-step CSVs
-└── README.md
 
-text
+    ECDC/
+      ecdc_clustering.py                 ECDC algorithm core
+      ecdc_emergency.py                  ECDC harness (mixed topology)
+      ecdc_doubleinter.py                ECDC harness (double-intersection)
+      ecdc_emergency_bs_hardcoded.py     ECDC realistic-channel variant
+      ecdc_doubleinter_bs_hardcoded.py
+      MCSC_clustering.py                 MCSC baseline core
+      mcsc_emergency.py                  MCSC harnesses
+      mcsc_doubleinter.py
+      imic_emergency.py                  IMICLiVAN harnesses
+      imic_doubleinter.py
+      zone_based_clustering_intersection.py
+      zone_emergency.py                  Zone-based harnesses
+      zone_doubleinter.py
+      naive_ea_clustering.py             Stacked comparator core
+      naive_ea_emergency.py
+      naive_ea_doubleinter.py
+      net_metrics.py                     PHY/MAC model
+      net_metrics_bs_hardcoded.py
+      metrics_clustering.py              Shared metric helpers
+      metrics_tracking.py                Event trackers
+      statistical_analysis.py            Table 17 - Paired comparisons
+      sfr_decomposition.py               Table 10 - SFR breakdown
+      lcd_reconciliation.py              Table 12 - LCD reconciliation
+      impairment_sensitivity.py          Table 5  - PHY success
+      verify_mac_solver.py               Table 6  - Bianchi solver validation
+      mac_layer_check.py
+      max_latency.py                     Table 10 - Latency bounds
+      compute_p95.py
+      active_population.py               Table 3  - Active vehicles
+      amb_speed.py                       Table 3  - Speed statistics
+      run_batch.sh                       Main simulation batch
+      run_nojaccard.sh                   Jaccard ablation
+      network/emergency/                 SUMO networks
+      metrics/                           Per-seed and per-step CSVs
+      README.md
 
 ---
 
 ## Requirements
 
 ### Python packages
-pip install -r requirements.txt
 
-text
+    pip install -r requirements.txt
 
 Dependencies: `numpy`, `pandas`, `scipy`, `scikit-learn`.
 
 ### SUMO
 
 Install SUMO from https://sumo.dlr.de/docs/Installing/index.html (tested with **SUMO 1.26.0**). Set the environment variable:
-export SUMO_HOME=/path/to/sumo
 
-text
+    export SUMO_HOME=/path/to/sumo
 
 Do **not** `pip install traci`; the correct `traci` module is provided by SUMO under `$SUMO_HOME/tools/traci`.
 
@@ -98,18 +94,17 @@ The analysis scripts do not require SUMO; only the harnesses do.
 All scripts run from the repository root.
 
 **ECDC (Mixed):**
-python ecdc_emergency.py --density 240 --seed 43 --reps 5 --amb_depart 150
 
-text
+    python ecdc_emergency.py --density 240 --seed 43 --reps 5 --amb_depart 150
 
 **ECDC (Double):**
-python ecdc_doubleinter.py --density 240 --seed 42 --reps 5 --amb_depart 150
 
-text
+    python ecdc_doubleinter.py --density 240 --seed 42 --reps 5 --amb_depart 150
 
 Seeds in the paper:
-- Mixed: 43–47 (`--seed 43 --reps 5`)
-- Double: 42–46 (`--seed 42 --reps 5`)
+
+- Mixed: 43-47 (`--seed 43 --reps 5`)
+- Double: 42-46 (`--seed 42 --reps 5`)
 
 Output CSVs go to `metrics/<algorithm>_<scenario>/clustering_data/`.
 
@@ -118,9 +113,8 @@ Output CSVs go to `metrics/<algorithm>_<scenario>/clustering_data/`.
 `mcsc_*.py`, `imic_*.py`, `zone_*.py`, `naive_ea_*.py` use identical command-line arguments.
 
 ### Ablations
-ECDC_ABLATION=nogate python ecdc_emergency.py --density 240 --seed 43 --reps 5 --amb_depart 150
 
-text
+    ECDC_ABLATION=nogate python ecdc_emergency.py --density 240 --seed 43 --reps 5 --amb_depart 150
 
 Supported values: `fixedradius`, `nohyst`, `randrelay`, `nogate`, `directbs`, `oldrch`, `nobothgates`, `nojaccard`.
 
@@ -132,15 +126,15 @@ Run from the repository root:
 
 | Table | Command |
 |---|---|
-| Table 5  — PHY success | `python impairment_sensitivity.py` |
-| Table 6  — Bianchi validation | `python verify_mac_solver.py` |
-| Table 10 — SFR breakdown | `python sfr_decomposition.py --scenario emergency --density 240` |
-| Table 12 — LCD reconciliation | `python lcd_reconciliation.py --scenario emergency --density 240` |
-| Table 17 — Paired statistics | `python statistical_analysis.py --scenario emergency --density 240` |
+| Table 5  - PHY success | `python impairment_sensitivity.py` |
+| Table 6  - Bianchi validation | `python verify_mac_solver.py` |
+| Table 10 - SFR breakdown | `python sfr_decomposition.py --scenario emergency --density 240` |
+| Table 12 - LCD reconciliation | `python lcd_reconciliation.py --scenario emergency --density 240` |
+| Table 17 - Paired statistics | `python statistical_analysis.py --scenario emergency --density 240` |
 
 For the double-intersection scenario, replace `--scenario emergency` with `--scenario doubleinter`.
 
-Remaining tables (3, 9, 11, 13–16, 18–20) are readable directly from the CSVs under `metrics/`.
+Remaining tables (3, 9, 11, 13-16, 18-20) are readable directly from the CSVs under `metrics/`.
 
 ---
 
